@@ -76,9 +76,10 @@
         <div><b>当日<small>OK</small></b><span>LINE概算の返答</span></div>
       </div>
     </div>
-    <div class="ph rv" role="img" aria-label="写真の入る場所：整備士の手元、清潔な工場">
+    <div class="ph rv media">
+      <video class="vid" autoplay muted loop playsinline preload="metadata" poster="./img/hero_poster.jpg" aria-hidden="true"><source src="./img/hero_loop.mp4" type="video/mp4"></video>
+      <img class="still" src="./img/lift.jpg" alt="リフトで車を点検する整備士" width="1920" height="1280">
       <div class="gauge" aria-hidden="true"><b>4.9</b><small>REVIEW</small><i></i></div>
-      <span class="cap">Photo: 整備士の手元 ／ 清潔な工場（撮影予定）</span>
     </div>
   </div>
 </section>
@@ -98,6 +99,11 @@
       <li><b>05</b><span>警告灯が点いた<small>メーターの写真を送ってください</small></span></li>
       <li><b>06</b><span>まだ何も決めていない<small>「とりあえず聞くだけ」で大丈夫です</small></span></li>
     </ul>
+    <div class="shots rv" aria-label="送っていただく写真の例">
+      <figure><img src="./img/scratch_red.jpg" alt="バンパーのこすり傷の例" loading="lazy" width="1600" height="1066"><figcaption>例：バンパーのこすり傷</figcaption></figure>
+      <figure><img src="./img/scratch_black.jpg" alt="ドアの傷の例" loading="lazy" width="1600" height="900"><figcaption>例：ドアのこすり傷・へこみ</figcaption></figure>
+      <p><b>こんな写真で大丈夫です。</b>近くで1枚と、少し離れて1枚。明るい場所で撮ると、より正確に見られます。</p>
+    </div>
     <div class="trouble-cta rv">
       <button class="btn g demo-line" type="button">LINEで写真を送る</button>
       <span>友だち追加 → 写真を送る → 概算が届く。それだけです。</span>
@@ -112,6 +118,7 @@
       <h2><span>Services</span>できること。</h2>
       <p>料金は目安です。お車の状態を拝見してから、正式なお見積りをお出しします。</p>
     </div>
+    <div class="band rv"><img src="./img/engine.jpg" alt="エンジンルームを点検する整備士" loading="lazy" width="1600" height="1066"><span>Inspection &amp; Maintenance</span></div>
     <div class="svc rv">
       <article><p class="n">01 — 車検</p><h3>車検・法定点検</h3><p>代車無料。土曜も受付。事前にLINEで車検証の写真を送っていただければ、お見積りまで済ませられます。</p><p class="pr">¥58,000〜<small>軽自動車・諸費用込</small></p></article>
       <article><p class="n">02 — 修理</p><h3>一般修理・故障診断</h3><p>異音・警告灯・エアコン不調など。診断機での点検から。</p><p class="pr">¥3,300〜<small>診断料</small></p></article>
@@ -132,10 +139,10 @@
       <p>電話しないと何も分からない店から、スマホから気軽に相談できる店へ。写真を送るだけです。</p>
     </div>
     <ol class="flow rv">
-      <li><p class="st">1<small>SHOOT</small></p><b>車の傷をスマホで撮影</b><p>近くと少し離れた位置の2枚があると正確です。</p><div class="pic" data-cap="Photo: 傷を撮る手元"></div></li>
+      <li><p class="st">1<small>SHOOT</small></p><b>車の傷をスマホで撮影</b><p>近くと少し離れた位置の2枚があると正確です。</p><div class="pic" data-cap="例：この写真を送るだけ"><img src="./img/scratch_red.jpg" alt="" loading="lazy" width="1600" height="1066"></div></li>
       <li><p class="st">2<small>SEND</small></p><b>LINEで写真を送信</b><p>友だち追加して、トークに写真を送るだけ。文章は一言でOK。</p><div class="pic" data-cap="LINE"><div class="chat"><i class="img"></i><i class="me"></i><i class="them"></i></div></div></li>
       <li><p class="st">3<small>REPLY</small></p><b>概算・来店のご案内</b><p>営業時間内なら当日中に、概算と作業時間の目安をお返しします。</p><div class="pic" data-cap="LINE"><div class="chat"><i class="me"></i><i class="them"></i><i class="them" style="width:50%"></i></div></div></li>
-      <li><p class="st">4<small>VISIT</small></p><b>必要ならご予約・来店</b><p>日時を決めてご来店。代車の手配もLINEで済みます。</p><div class="pic" data-cap="Photo: 受付・代車"></div></li>
+      <li><p class="st">4<small>VISIT</small></p><b>必要ならご予約・来店</b><p>日時を決めてご来店。代車の手配もLINEで済みます。</p><div class="pic" data-cap="ご来店・点検"><img src="./img/lift.jpg" alt="" loading="lazy" width="1920" height="1280"></div></li>
     </ol>
     <div class="flow-cta rv">
       <button class="btn g demo-line" type="button">LINEで写真を送って相談する</button>
@@ -152,8 +159,8 @@
       <p>「どのくらいの傷が、いくらで、何日で直るのか」。事例は判断の材料になります。</p>
     </div>
     <div class="cases rv">
-      <article class="case"><div class="ba"><div><span>BEFORE</span></div><div class="after"><span>AFTER</span></div></div><div class="bd"><h3>リアバンパーのこすり傷（軽自動車）</h3><p>駐車場で壁にこすった傷。部分塗装で対応し、交換せずに費用を抑えました。</p><div class="meta"><span><small>費用</small>¥24,000</span><span><small>期間</small>2日</span></div></div></article>
-      <article class="case"><div class="ba"><div><span>BEFORE</span></div><div class="after"><span>AFTER</span></div></div><div class="bd"><h3>ドアのへこみ（デントリペア）</h3><p>塗装を傷めていないへこみは、裏から押し出す工法で当日仕上げ。</p><div class="meta"><span><small>費用</small>¥13,200</span><span><small>期間</small>当日</span></div></div></article>
+      <article class="case"><div class="ba"><div><img src="./img/scratch_red.jpg" alt="修理前：バンパーのこすり傷" loading="lazy" width="1600" height="1066"><span>BEFORE</span></div><div class="after"><span>AFTER</span><em>修理後の写真（撮影予定）</em></div></div><div class="bd"><h3>フロントバンパーのこすり傷</h3><p>駐車場で壁にこすった傷。部分塗装で対応し、交換せずに費用を抑えました。</p><div class="meta"><span><small>費用</small>¥24,000</span><span><small>期間</small>2日</span></div></div></article>
+      <article class="case"><div class="ba"><div><img src="./img/scratch_black.jpg" alt="修理前：ドアのこすり傷" loading="lazy" width="1600" height="900"><span>BEFORE</span></div><div class="after"><span>AFTER</span><em>修理後の写真（撮影予定）</em></div></div><div class="bd"><h3>ドアのこすり傷・へこみ</h3><p>塗装まで削れた傷は、へこみを整えてから部分塗装。色合わせを丁寧に。</p><div class="meta"><span><small>費用</small>¥38,500</span><span><small>期間</small>3日</span></div></div></article>
       <article class="case"><div class="ba"><div><span>BEFORE</span></div><div class="after"><span>AFTER</span></div></div><div class="bd"><h3>フロントバンパー交換（事故修理）</h3><p>保険対応。代車をお出しし、修理中の写真もLINEで共有しました。</p><div class="meta"><span><small>費用</small>保険対応</span><span><small>期間</small>5日</span></div></div></article>
     </div>
     <p class="fine">※ 事例・金額・日数はすべて架空デモ用の例です。</p>
