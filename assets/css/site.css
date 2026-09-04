@@ -306,9 +306,10 @@ body::before{
 @media(min-width:900px){.cta .wrap{grid-template-columns:1.2fr 1fr;align-items:center}}
 .cta h2{font-size:clamp(1.7rem,3.6vw,2.6rem);line-height:1.4}
 .cta p{color:var(--ink-2);max-width:32em;margin-top:12px}
-.cta-box{background:var(--paper);border:2px solid var(--ink);padding:26px;display:grid;gap:18px;justify-items:start}
-.cta-box .qr{display:flex;gap:16px;align-items:center;font-size:.86rem;color:var(--ink-2)}
-.cta-box .qr img{width:96px;height:96px;border:1px solid var(--rule)}
+.cta-box{background:var(--paper);border:2px solid var(--ink);padding:26px;display:flex;flex-direction:column;align-items:stretch;gap:18px;min-width:0;max-width:100%}
+.cta-box .qr{display:flex;gap:16px;align-items:center;font-size:.86rem;color:var(--ink-2);min-width:0;width:100%}
+.cta-box .qr img{width:96px;height:96px;border:1px solid var(--rule);flex:none}
+.cta-box .qr span{min-width:0;flex:1}
 .cta-box .btn{width:100%;justify-content:center}
 
 /* ---------- フッター ---------- */
