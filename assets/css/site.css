@@ -310,7 +310,7 @@ body::before{
 .cta-box .qr{display:flex;gap:16px;align-items:center;font-size:.86rem;color:var(--ink-2);min-width:0;width:100%}
 .cta-box .qr img{width:96px;height:96px;border:1px solid var(--rule);flex:none}
 .cta-box .qr span{min-width:0;flex:1}
-.cta-box .btn{width:100%;justify-content:center}
+.cta-box .btn{width:100%;justify-content:center;white-space:normal;text-align:center;line-height:1.3}
 
 /* ---------- フッター ---------- */
 .site-foot{border-top:2px solid var(--ink);padding:40px 0 34px;font-size:.9rem;color:var(--ink-2)}
