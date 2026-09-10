@@ -36,6 +36,15 @@
     targets.forEach(function (t) { t.classList.add("in"); });
   }
 
+  // 2b) 浮くLINEボタン：最終CTA（#contact）が見えている間は隠す（QRコードと重なるため）
+  var fab = document.querySelector(".line-float");
+  var contact = document.getElementById("contact");
+  if (fab && contact && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { fab.classList.toggle("hide", en.isIntersecting); });
+    }, { threshold: 0.15 }).observe(contact);
+  }
+
   // 3) 年号
   var y = document.getElementById("year");
   if (y) y.textContent = String(new Date().getFullYear());
