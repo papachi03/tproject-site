@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://papachi03.github.io/tproject-site/sitemap.xml
+Sitemap: https://tproject-jp.com/sitemap.xml
