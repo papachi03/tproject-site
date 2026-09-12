@@ -528,7 +528,8 @@ a.shot:hover{transform:translateY(-4px)}
 
 
 /* ---------- Instagram連携フィード ---------- */
-.ig-feed__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-top:34px}
+.ig-feed__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:34px}
+@media(min-width:820px){.ig-feed__grid{grid-template-columns:repeat(6,1fr)}}
 .ig-feed__item{position:relative;display:block;aspect-ratio:1/1;overflow:hidden;background:var(--paper-2);border-radius:6px}
 .ig-feed__item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s var(--ease)}
 .ig-feed__item:hover img{transform:scale(1.05)}
