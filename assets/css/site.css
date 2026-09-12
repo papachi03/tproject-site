@@ -525,3 +525,12 @@ a.shot:hover{transform:translateY(-4px)}
 .sns-card small{color:var(--ink-3);font-size:.85rem}
 .sns-card .go{font-family:var(--f-head);font-weight:700;font-size:.88rem;margin-top:6px}
 .sns-card .go::after{content:" \2192"}
+
+
+/* ---------- Instagram連携フィード ---------- */
+.ig-feed__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-top:34px}
+.ig-feed__item{position:relative;display:block;aspect-ratio:1/1;overflow:hidden;background:var(--paper-2);border-radius:6px}
+.ig-feed__item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s var(--ease)}
+.ig-feed__item:hover img{transform:scale(1.05)}
+.ig-feed__fallback{text-align:center;padding:28px 0;margin-top:10px}
+@media(prefers-reduced-motion:reduce){.ig-feed__item img{transition:none}}

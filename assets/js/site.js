@@ -49,3 +49,42 @@
   var y = document.getElementById("year");
   if (y) y.textContent = String(new Date().getFullYear());
 })();
+
+// 4) Instagram連携フィード（tproject-jp.com/ig/feed から取得して並べる）
+(function () {
+  var FEED_ENDPOINT = "https://tproject-jp.com/ig/feed";
+
+  document.querySelectorAll(".ig-feed").forEach(function (root) {
+    var grid = root.querySelector(".ig-feed__grid");
+    var fallback = root.querySelector(".ig-feed__fallback");
+    if (!grid || !fallback) return;
+
+    var link = fallback.querySelector("a");
+    if (link) link.href = "https://www.instagram.com/" + root.dataset.account + "/";
+
+    function showFallback() { grid.hidden = true; fallback.hidden = false; }
+
+    fetch(FEED_ENDPOINT + "?shop=" + encodeURIComponent(root.dataset.shop))
+      .then(function (res) { return res.ok ? res.json() : Promise.reject(res.status); })
+      .then(function (data) {
+        if (!data.posts || !data.posts.length) return showFallback();
+        data.posts.forEach(function (post) {
+          var a = document.createElement("a");
+          a.className = "ig-feed__item";
+          a.href = post.link;
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.setAttribute("role", "listitem");
+          var img = document.createElement("img");
+          img.src = post.image;
+          img.loading = "lazy";
+          img.decoding = "async";
+          // キャプションの1行目を代替テキストにする（読み上げ対応）
+          img.alt = (post.caption || "Instagramの投稿").split("\n")[0].slice(0, 80);
+          a.appendChild(img);
+          grid.appendChild(a);
+        });
+      })
+      .catch(showFallback);
+  });
+})();
