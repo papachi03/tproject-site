@@ -34,6 +34,7 @@
   dl { margin: 0; }
   dt { font-weight: 600; margin-top: 12px; }
   dd { margin: 0 0 0 0; color: #4a4a45; }
+  .box[lang="en"] { font-size: 14.5px; line-height: 1.75; }
   .date { margin-top: 56px; padding-top: 20px; border-top: 1px solid #e4e1da; font-size: 13.5px; color: #6b6b66; }
   a { color: #1d1d1b; text-underline-offset: 3px; }
   strong { font-weight: 600; }
@@ -95,7 +96,59 @@
   <h3>連携の解除方法</h3>
   <p>事業者様はいつでも連携を解除できます。Instagramアプリの「設定とアクティビティ」→「ウェブサイトの許可」から当方のアプリを削除してください。解除してもInstagramの投稿・フォロワーには一切影響しません。</p>
 
-  <h2>3. アクセス解析について</h2>
+  <h2 id="youtube">3. YouTube翻訳Bot（papasan翻訳Bot）について / YouTube Translation Bot</h2>
+
+  <p>当方は、ライブ配信の話し声を英語に翻訳してYouTubeのライブチャットに投稿するツール「papasan翻訳Bot」（以下「本ツール」）を運用しています。<strong>本ツールは YouTube API サービスを使用しています。</strong>本ツールを利用する配信者は、<a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">YouTube 利用規約</a>に同意したものとみなされます。YouTube（Google）によるデータの取り扱いについては、<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google プライバシー ポリシー</a>をご確認ください。本ツールの詳細は<a href="/translation-bot/">紹介ページ</a>、利用条件は<a href="/terms/">利用規約</a>をご覧ください。</p>
+
+  <h3>取得・利用する情報</h3>
+  <div class="box">
+    <ul>
+      <li><strong>配信チャンネルの「いま配信中の放送」の情報</strong>（放送のID・ライブチャットのID）…どの配信に翻訳を投稿するかを知るため。配信者ご本人が「閲覧のみ」の許可をした場合に限ります。</li>
+      <li><strong>翻訳Botのチャンネル情報</strong>（チャンネル名・チャンネルID）…投稿するアカウントを確認するため。</li>
+      <li><strong>配信の音声</strong>…配信者の話し声を文字にして翻訳するため。音声は当方のパソコンの中で文字にし、<strong>音声そのものは保存しません。</strong></li>
+      <li><strong>文字にした話し声と、その英訳</strong>…ライブチャットへの投稿と、配信者本人が配信後に字幕を作るため。英訳のために文字にした話し声を Google 翻訳に送ります。</li>
+      <li><strong>Google が発行するアクセストークン</strong>（許可の鍵）…上記の操作を行うため。</li>
+    </ul>
+  </div>
+
+  <h3>取得しない情報</h3>
+  <div class="box">
+    <ul>
+      <li>Googleアカウントのパスワード</li>
+      <li>視聴者の個人情報、視聴者のチャットの内容（本ツールはチャットを読み取りません）</li>
+      <li>チャンネル登録者・再生回数・収益などの分析データ</li>
+    </ul>
+    <p>また、本ツールが動画の投稿・編集・削除、チャンネル設定の変更を行うことはありません。</p>
+  </div>
+
+  <h3>利用目的と共有</h3>
+  <p>取得した情報は、<strong>配信中に話し声の英訳をライブチャットに投稿すること、および配信者ご本人の字幕作成のためにのみ</strong>利用します。広告、分析、他の目的には使用せず、第三者に販売・提供することはありません（英訳のための Google 翻訳への送信を除く）。</p>
+
+  <h3>保存と削除</h3>
+  <ul>
+    <li>アクセストークンは、当方が管理するパソコン内に保存し、インターネット上に公開しません。</li>
+    <li>文字にした話し声と英訳の記録は、当方のパソコン内に保存し、配信者ご本人の字幕作成にのみ使用します。<strong>保存から30日以内に削除</strong>します（配信者ご本人が字幕として書き出したものを除く）。</li>
+    <li>YouTube から取得した放送の情報は、配信中の投稿のためだけに一時的に使い、保存しません。</li>
+    <li>削除のご依頼は <a href="mailto:info@tproject-jp.com">info@tproject-jp.com</a> までご連絡ください。ご本人であることを確認のうえ、7日以内に削除します。</li>
+  </ul>
+
+  <h3>許可の取り消し方法</h3>
+  <p>配信者はいつでも本ツールへの許可を取り消せます。<a href="https://security.google.com/settings/security/permissions" target="_blank" rel="noopener">Google アカウントのセキュリティ設定（サードパーティのアクセス）</a>から「papasan翻訳Bot」を削除してください。取り消すと、本ツールは直ちにその配信チャンネルにアクセスできなくなります。</p>
+
+  <div class="box" lang="en">
+    <p><strong>English summary</strong></p>
+    <p>Tproject operates "papasan翻訳Bot" (the "Tool"), which transcribes a live streamer's own spoken Japanese and posts English translations to the stream's YouTube live chat. <strong>The Tool uses YouTube API Services.</strong> By using the Tool, streamers agree to be bound by the <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">YouTube Terms of Service</a>. See the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> for how Google handles data.</p>
+    <ul>
+      <li><strong>Data accessed:</strong> the active live broadcast ID and live chat ID of the streamer's channel (read-only permission granted by the streamer), the bot channel's name and ID, OAuth access tokens, and the stream audio.</li>
+      <li><strong>How it is used:</strong> the stream audio is transcribed locally on our computer and is <strong>not stored</strong>. The transcribed text is sent to Google Translate to produce English, which is posted to the live chat. Transcripts are kept only so the streamer can create subtitles after the stream.</li>
+      <li><strong>Not accessed:</strong> passwords, viewers' personal information, viewers' chat messages (the Tool does not read chat), analytics or revenue data. The Tool never uploads, edits or deletes videos.</li>
+      <li><strong>Sharing:</strong> we do not sell or share data with third parties, except sending transcribed text to Google Translate for translation.</li>
+      <li><strong>Storage and deletion:</strong> tokens and transcripts are stored only on our own computer and are not published. Transcripts are deleted within 30 days. Broadcast data from YouTube is used only during the stream and is not stored. Deletion requests: <a href="mailto:info@tproject-jp.com">info@tproject-jp.com</a> (handled within 7 days).</li>
+      <li><strong>Revoking access:</strong> streamers can revoke the Tool's access at any time via <a href="https://security.google.com/settings/security/permissions" target="_blank" rel="noopener">Google Account security settings</a>.</li>
+    </ul>
+  </div>
+
+  <h2>4. アクセス解析について</h2>
 
   <p>当方が制作・運用するホームページには、Googleが提供するアクセス解析ツール「Googleアナリティクス（GA4）」を設置する場合があります。</p>
 
@@ -108,30 +161,31 @@
 
   <p>Cookieの利用を望まれない場合は、ご利用のブラウザの設定で無効にすることができます。Googleによるデータの取り扱いについては、<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Googleのプライバシーポリシー</a>をご確認ください。</p>
 
-  <h2>4. お問い合わせでいただいた情報</h2>
+  <h2>5. お問い合わせでいただいた情報</h2>
   <p>お問い合わせフォームやメールでいただいたお名前・ご連絡先・ご相談内容は、ご返信およびご相談への対応のみに使用します。ご本人の同意なく第三者に提供することはありません。</p>
 
-  <h2>5. 情報の管理</h2>
+  <h2>6. 情報の管理</h2>
   <p>お預かりした情報は、漏洩・紛失・改ざんを防ぐため、アクセス権限の制限および通信の暗号化（HTTPS）により管理します。業務上必要な範囲を超えて閲覧・複製しません。</p>
 
-  <h2>6. 第三者への提供</h2>
+  <h2>7. 第三者への提供</h2>
   <p>法令に基づく場合を除き、お預かりした情報を第三者に提供することはありません。ただし、サービスの提供のため以下の事業者のサーバー・サービスを利用しています。</p>
   <div class="box">
     <ul>
       <li>Cloudflare, Inc.（ホームページの配信、データの保存）</li>
-      <li>Google LLC（アクセス解析）</li>
+      <li>Google LLC（アクセス解析、YouTube API サービス、Google 翻訳）</li>
       <li>Meta Platforms, Inc.（Instagramの投稿取得）</li>
     </ul>
   </div>
 
-  <h2>7. 開示・訂正・削除のご請求</h2>
+  <h2>8. 開示・訂正・削除のご請求</h2>
   <p>お預かりしている情報の開示、訂正、利用停止、削除をご希望の場合は、<a href="mailto:info@tproject-jp.com">info@tproject-jp.com</a> までご連絡ください。ご本人であることを確認のうえ、速やかに対応いたします。</p>
 
-  <h2>8. 本ポリシーの変更</h2>
+  <h2>9. 本ポリシーの変更</h2>
   <p>法令の変更やサービス内容の変更に伴い、本ポリシーを改定する場合があります。重要な変更を行う場合は、このページにてお知らせします。</p>
 
   <p class="date">
     制定日：2026年9月12日<br>
+    改定日：2026年9月26日（YouTube翻訳Botについて追記）<br>
     Tproject
   </p>
 
