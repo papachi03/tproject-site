@@ -22,12 +22,14 @@
   .brand { font-size: 13px; letter-spacing: .08em; color: #6b6b66; text-decoration: none; }
   h1 { font-size: 30px; line-height: 1.4; letter-spacing: .01em; margin: 10px 0 6px; }
   .sub { font-size: 16px; color: #4a4a45; margin: 0 0 20px; }
+  /* YouTube公式アイコン（brand resources の yt_icon_rgb.png をそのまま縮小表示）。
+     決まり：高さ20px以上・形と色は変えない・周りに三角形の大きさ以上の余白（24px表示で約10px以上） */
   .yt {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: #fff; border: 1px solid #e4e1da; border-radius: 999px;
-    padding: 6px 16px 6px 10px; font-size: 14px; font-weight: 600;
+    display: inline-flex; align-items: center; gap: 14px;
+    background: #fff; border: 1px solid #e4e1da; border-radius: 12px;
+    padding: 12px 18px 12px 12px; font-size: 14px; font-weight: 600;
   }
-  .yt svg { width: 34px; height: 24px; flex: none; }
+  .yt img { width: 34px; height: 24px; flex: none; display: block; }
   h2 {
     font-size: 18px; margin: 44px 0 12px; padding-top: 20px;
     border-top: 1px solid #e4e1da; letter-spacing: .02em;
@@ -67,7 +69,7 @@
     <h1>papasan翻訳Bot</h1>
     <p class="sub">ライブ配信の話し声を、その場で英語にしてチャットに流します。<br>Real-time English translation of Japanese live streams, posted to the live chat.</p>
     <span class="yt">
-      <svg viewBox="0 0 34 24" aria-hidden="true"><rect width="34" height="24" rx="6" fill="#FF0000"/><path d="M13.5 7v10l9-5z" fill="#fff"/></svg>
+      <img src="/assets/brand/yt_icon_rgb.png" alt="YouTube" width="34" height="24">
       YouTube API サービスを使用しています / Uses YouTube API Services
     </span>
     <nav class="links top" aria-label="規約とポリシー">
