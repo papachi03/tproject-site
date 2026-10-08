@@ -618,3 +618,5 @@ a.shot:hover{transform:translateY(-4px)}
 .toolshot{margin:8px 0 0;grid-column:1/-1}
 .toolshot .shot{width:100%}
 .toolshot figcaption{margin-top:12px;font-size:.82rem;color:var(--ink-3);line-height:1.7}
+.toolshot.duo .pair{display:grid;gap:16px}
+@media(min-width:720px){.toolshot.duo .pair{grid-template-columns:1fr 1fr}}
