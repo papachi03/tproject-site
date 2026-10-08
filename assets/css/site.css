@@ -527,6 +527,84 @@ a.shot:hover{transform:translateY(-4px)}
 .sns-card .go::after{content:" \2192"}
 
 
+/* ---------- 実績（数字を主役に） ----------
+   黒の極太の数字を、黄色のマーカー一本の上に置く（見出しの .hl と同じ"刃"）。
+   単位は小さく、下に「何の数字か」「いつ時点か」を必ず添える。 */
+[hidden]{display:none!important} /* 公開前のブロック（data-publish-after）を class の display より優先して隠す */
+.stats{display:grid;gap:0;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink)}
+@media(min-width:720px){.stats{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}}
+.stats.wide{grid-template-columns:1fr}
+@media(min-width:900px){.stats.wide{grid-template-columns:1.6fr 1fr 1fr}}
+.stat{padding:22px 0 24px;border-bottom:1px solid var(--rule);display:grid;gap:8px;align-content:start}
+.stat:last-child{border-bottom:0}
+@media(min-width:720px){
+  .stat{border-bottom:0;border-right:1px solid var(--rule);padding:28px 26px 32px}
+  .stat:first-child{padding-left:0}
+  .stat:last-child{border-right:0;padding-right:0}
+}
+.stat .fig{
+  display:inline-block;align-self:start;justify-self:start;
+  font-family:var(--f-latin);font-weight:900;font-size:clamp(2.9rem,7vw,4.6rem);line-height:1;letter-spacing:-.03em;
+  font-variant-numeric:tabular-nums;white-space:nowrap;
+  background:linear-gradient(transparent 60%,var(--yellow) 60%,var(--yellow) 94%,transparent 94%);
+  padding:0 .1em;margin-left:-.1em;
+}
+.stat .fig small{font-family:var(--f-head);font-weight:900;font-size:.36em;letter-spacing:0;margin:0 .08em 0 .1em}
+.stats.wide .stat:first-child .fig{font-size:clamp(3.6rem,12vw,7.2rem);letter-spacing:-.04em}
+.stat .what{font-family:var(--f-head);font-weight:700;font-size:1.04rem;line-height:1.45}
+.stat .when{font-size:.8rem;line-height:1.65;color:var(--ink-3)}
+.stat .when b{color:var(--ink-2)}
+.stat.sub .fig{font-size:clamp(2.2rem,5vw,3.2rem)}
+/* 出現を少しずつずらす（既存の .reveal を使う） */
+.stats .stat.reveal:nth-child(2){transition-delay:.12s}
+.stats .stat.reveal:nth-child(3){transition-delay:.24s}
+.stats .stat.reveal:nth-child(4){transition-delay:.36s}
+.stats-note{margin-top:12px;font-size:.8rem;color:var(--ink-3)}
+
+/* 伸びた理由：数字の差を棒で見せる（伸びた物だけ黄色） */
+.bars{margin-top:14px;display:grid;gap:10px}
+.bars li{display:grid;grid-template-columns:1fr auto;gap:4px 14px;align-items:end}
+.bars .bl{font-family:var(--f-head);font-weight:700;font-size:.9rem;line-height:1.4;grid-column:1/-1}
+.bars i{display:block;height:16px;width:var(--w,50%);background:var(--yellow);border:1px solid var(--ink)}
+.bars li.dim i{background:var(--paper-3);border-color:var(--rule-strong)}
+.bars b{font-family:var(--f-latin);font-weight:900;font-size:1.05rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+.bars li.dim b{color:var(--ink-3)}
+
+/* 実績の記事：見本デモ（.case）の部品を使い回し、札だけ変える。数字の段は横いっぱい */
+.case[data-tag] .ind::after{content:attr(data-tag)}
+.case .stats{grid-column:1/-1;margin-bottom:6px}
+.case .reels{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
+.case .reels .shot.sp{width:min(190px,calc(50% - 8px));border-radius:16px}
+.case .reels .shot.pc{width:100%;max-width:520px}
+.case .reels .shot img{width:100%;height:auto}
+.case .reels .cap{width:100%;font-size:.8rem;color:var(--ink-3)}
+.case.yfj .mock{background:#1b1f24;background-image:radial-gradient(90% 70% at 20% 20%,rgba(255,255,255,.08),transparent)}
+.case.yfj .label{background:#F2F2EF;color:#1b1f24}
+.case .mock + .shot.pc{margin-top:16px;width:100%}
+.case .tools-list{margin-top:20px;border-top:1px solid var(--ink)}
+.case .tools-list li{padding:12px 0;border-bottom:1px solid var(--rule);display:grid;gap:2px;font-size:.95rem;color:var(--ink-2)}
+.case .tools-list b{font-family:var(--f-head);color:var(--ink);font-size:1.02rem}
+.case .tools-list a{text-decoration:underline;text-underline-offset:3px}
+/* 作ったもの一覧（画面つき）：白い札に絵、下に名前と一言。小さな画面は横に並べる */
+.case .made{grid-column:1/-1;display:grid;gap:18px;counter-reset:m}
+@media(min-width:720px){.case .made{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}}
+@media(min-width:1000px){.case .made{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.made li{min-width:0;background:#fff;border:1px solid var(--rule-strong);padding:10px 10px 18px;display:grid;gap:8px;align-content:start;box-shadow:0 20px 40px -32px rgba(35,24,21,.5)}
+.made .img{aspect-ratio:16/9;overflow:hidden;background:var(--paper-2);border:1px solid var(--rule)}
+.made .img img{width:100%;height:100%;object-fit:cover}
+.made .thumbs{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.made .thumbs.cards{grid-template-columns:repeat(4,1fr)}
+.made .thumbs img{width:100%;height:auto;border:1px solid var(--rule)}
+.made .thumbs .reel{aspect-ratio:3/4;overflow:hidden;border:1px solid var(--rule)}
+.made .thumbs .sq{aspect-ratio:1/1;overflow:hidden;border:1px solid var(--rule)}
+.made .thumbs .reel img,.made .thumbs .sq img{height:100%;object-fit:cover;border:0}
+.made b{display:flex;gap:10px;align-items:baseline;font-family:var(--f-head);font-size:1.02rem;line-height:1.4;padding:6px 6px 0}
+.made b::before{counter-increment:m;content:counter(m,decimal-leading-zero);flex:none;font-family:var(--f-latin);font-size:.72rem;letter-spacing:.14em;color:var(--ink);border-bottom:3px solid var(--yellow);line-height:1}
+.made p{font-size:.88rem;color:var(--ink-2);padding:0 6px;line-height:1.7}
+.made .free{display:inline-block;font-family:var(--f-head);font-weight:700;font-size:.74rem;background:var(--yellow);padding:1px 8px;margin-left:6px;vertical-align:middle}
+.pub-note{margin-top:28px;font-size:.88rem;color:var(--ink-2);display:grid;gap:4px}
+.pub-note a{text-decoration:underline;text-underline-offset:3px}
+
 /* ---------- Instagram連携フィード ---------- */
 .ig-feed__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:34px}
 @media(min-width:820px){.ig-feed__grid{grid-template-columns:repeat(6,1fr)}}
