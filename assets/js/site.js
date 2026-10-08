@@ -88,3 +88,20 @@
       .catch(showFallback);
   });
 })();
+
+/* 4) 問い合わせの入口ごとの押された回数をGA4へ（2026-10-09）
+   メール・公式LINE・電話相談の予約、どれが押されたかを月次レポートで比べるため。
+   イベント名：contact_email／contact_line／contact_booking（どのページのどこかは GA4 のページの情報で分かる） */
+(function () {
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a[href]");
+    if (!a || typeof window.gtag !== "function") return;
+    var href = a.getAttribute("href") || "";
+    var name = null;
+    if (href.indexOf("mailto:") === 0) name = "contact_email";
+    else if (/(^|\/\/)(line\.me|lin\.ee)\//.test(href)) name = "contact_line";
+    else if (/calendar\.app\.google|calendar\.google\.com/.test(href)) name = "contact_booking";
+    if (!name) return;
+    window.gtag("event", name, { link_text: (a.textContent || "").trim().slice(0, 40), transport_type: "beacon" });
+  }, true);
+})();
