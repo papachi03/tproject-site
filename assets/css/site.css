@@ -613,3 +613,8 @@ a.shot:hover{transform:translateY(-4px)}
 .ig-feed__item:hover img{transform:scale(1.05)}
 .ig-feed__fallback{text-align:center;padding:28px 0;margin-top:10px}
 @media(prefers-reduced-motion:reduce){.ig-feed__item img{transition:none}}
+
+/* 実績：自社ツールの画面（2026-10-09） */
+.toolshot{margin:8px 0 0;grid-column:1/-1}
+.toolshot .shot{width:100%}
+.toolshot figcaption{margin-top:12px;font-size:.82rem;color:var(--ink-3);line-height:1.7}
