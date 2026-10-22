@@ -1,0 +1,19 @@
+
+# --- GitHub に入れない物（2026-10-22 ぱっぱ「GitHub には CLAUDE.md のような大事な物を残さない」）---
+CLAUDE.md
+**/CLAUDE.md
+AGENTS.md
+**/AGENTS.md
+CLAUDE.local.md
+.claude/*
+!.claude/launch.json
+memory/
+**/memory/*.md
+NEXT_ACTIONS*.md
+.env
+.env.*
+!.env.example
+*.key
+*admin_key*
+*secret*.txt
+*token*.txt
